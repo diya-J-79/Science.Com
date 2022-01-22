@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Acids and Bases</title>
+    <style>
+        * {box-sizing: border-box}
+        body {font-family: Verdana, sans-serif; margin:0}
+        .mySlides {display: none}
+        img {vertical-align: middle;}
+        
+        /* Slideshow container */
+        .slideshow-container {
+          max-width: 1000px;
+          position: relative;
+          margin: auto;
+        }
+        
+        /* Next & previous buttons */
+        .prev, .next {
+          cursor: pointer;
+          position: absolute;
+          top: 50%;
+          width: auto;
+          padding: 16px;
+          margin-top: -22px;
+          color: white;
+          font-weight: bold;
+          font-size: 18px;
+          transition: 0.6s ease;
+          border-radius: 0 3px 3px 0;
+          user-select: none;
+        }
+        
+        /* Position the "next button" to the right */
+        .next {
+          right: 0;
+          border-radius: 3px 0 0 3px;
+        }
+        
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+          background-color: rgba(0,0,0,0.8);
+        }
+        
+        /* Caption text */
+        .text {
+          color: #f2f2f2;
+          font-size: 15px;
+          padding: 8px 12px;
+          position: absolute;
+          bottom: 8px;
+          width: 100%;
+          text-align: center;
+        }
+        
+        /* Number text (1/3 etc) */
+        .numbertext {
+          color: #f2f2f2;
+          font-size: 12px;
+          padding: 8px 12px;
+          position: absolute;
+          top: 0;
+        }
+        
+        /* The dots/bullets/indicators */
+        .dot {
+          cursor: pointer;
+          height: 15px;
+          width: 15px;
+          margin: 0 2px;
+          background-color: #bbb;
+          border-radius: 50%;
+          display: inline-block;
+          transition: background-color 0.6s ease;
+        }
+        
+        .active, .dot:hover {
+          background-color: #717171;
+        }
+        
+        /* Fading animation */
+        .fade {
+          -webkit-animation-name: fade;
+          -webkit-animation-duration: 1.5s;
+          animation-name: fade;
+          animation-duration: 1.5s;
+        }
+        
+        @-webkit-keyframes fade {
+          from {opacity: .4} 
+          to {opacity: 1}
+        }
+        
+        @keyframes fade {
+          from {opacity: .4} 
+          to {opacity: 1}
+        }
+        
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+          .prev, .next,.text {font-size: 11px}
+        }
+        </style>
+</head>
+<style>
+    button:hover{
+    background-color: white;
+    color:rgb(255, 51, 61);
+    font-weight: bold;
+    }
+
+    
+
+    table{
+    align-self: center;
+    }
+
+    td {
+        text-align: center;
+    }
+
+    table{
+    background-color: rgba(0, 51, 160, 1);
+    align-self: center;
+    color: white;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+    footer{
+        font-size: 15mm;
+    }
+
+    img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+    button{
+        background-color:rgb(255, 51, 61);
+        font-size: 15px;
+        padding: 10px 24px;
+        box-shadow: 0 12px 12px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        color: white;
+            }
+    h1 {text-align: center;
+        color: rgb(219, 41, 50);
+        font-weight: 1500;
+        font-size:50px;
+        font-family: 'Roboto Mono', monospace;
+        text-align: center;
+        }
+    </style>
+
+<header>
+<table border=1 width ="100%">
+    <tr>
+        <td>
+            <div class="left-nav">
+                <div class="logo">
+                    <img src="data:image/png;base64,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"length=100px width="80px">
+                </div>
+            </div>
+            <div>
+                <td>
+                    <table >
+                        <tr>
+                            <td>
+                                <div class=right-nav>
+                                <td>
+                                    <nav>
+                                        <ul>
+                                            <li><button onclick="document.location='file:///C:/Users/user/Desktop/Study%20Related/IT/IT%20club/ICT/main.html'">Home</button></li>
+                                        </ul>
+                                    </nav>
+                                </td>
+                                <td>
+                                    <nav>
+                                        <ul>
+                                            <li><button onclick="document.location='file:///C:/Users/user/Desktop/Study%20Related/IT/IT%20club/ICT/Physics.html'">Physics</button></li>
+                                        </ul>
+                                    </nav>
+                                </td>
+                                <td>
+                                    <nav>
+                                        <ul>
+                                            <li><button onclick="document.location= 'file:///C:/Users/user/Desktop/Study%20Related/IT/IT%20club/ICT/Chemistry.html'">Chemistry</button></li>
+                                        </ul>
+                                    </nav>
+                                </td> 
+                                <td>
+                                    <nav>
+                                        <ul>
+                                            <li><button onclick="document.location='file:///C:/Users/user/Desktop/Study%20Related/IT/IT%20club/ICT/Biology.html'">Biology</button></li>
+                                        </ul>
+                                    </nav>
+                                </td>  
+                                <td>
+                                    <nav>
+                                        <ul>
+                                            <li><button onclick="document.location='https://docs.google.com/document/d/1o5JTWd56tfcw_L9Y6UevXHnzDBfTBxUIGIK-zY9MKI4/edit?usp=sharing'"target="_blank">Main References</button></li>
+                                        </ul>
+                                    </nav>
+                                </td> 
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+</table>
+</header>
+<body> 
+    <h1>Acids and Bases</h1>
+    <img src="https://assets.ltkcontent.com/images/6406/difference-acids-bases_0066f46bde.jpg" width = 400 length = 400 alt="could not load image">
+    <br><br><br><br>
+    
+    <h2>What we are going to learn today:</h2>
+
+    <br>
+
+    <ul>
+        <li>What are Acids and Bases</li>
+        <li>Properties Of Acids</li>
+        <li>Properties Of Bases</li>
+        <li>pH Scale <br> And...</li>
+        <li>Examples</li>
+    </ul>
+
+    <br><br>
+
+    <h2>What are Acids and Bases</h2>
+    <p>An acid is any hydrogen-containing substance that is capable of donating a proton (hydrogen ion) to another substance.  A base is a molecule or ion able to accept a hydrogen ion from an acid.
+    </p>
+    <img src="https://www.azimpremjifoundationpuducherry.org/sites/default/files/big_thumb.jpg" width = 400 length = 400 alt="could not load image">    
+
+    <br><br>
+
+    <h2>Properties of Acids</h2>
+    <p>The properties of acids are:
+    <ul>
+        <li>Conduct an electrical current</li>
+        <li>Sour taste</li>
+        <li>Acids change the color of Litmus paper to red</li>
+        <li>React with active metals to yield hydrogen gas.</li>
+    </ul>
+    </p>
+    <img src="https://images.mid-day.com/images/images/2019/mar/acid-attack-_d_l.jpg" width = 300 length = 300 alt="could not load image">
+
+    <h2>Properties of Bases</h2>
+    <p>The properties of bases are:
+    <ul>
+        <li>They can conduct electricity.</li>
+        <li>Bases feel slippery or soapy.</li>
+        <li>They are bitter in taste./li>
+        <li>Bases change the colour of litmus from red to blue.</li>
+    </ul>
+    </p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/BASE_logo.svg/1200px-BASE_logo.svg.png" width = 300 length = 300 alt="could not load image">
+
+    <h2>pH Scale</h2>
+    <p>In order to find the numeric value of the level of acidity or basicity of a substance, the pH scale (wherein pH stands for 'potential of hydrogen') can be used. The pH scale is the most common and trusted way to measure how acidic or basic a substance is. A pH scale measure can vary from 0 to 14, where 0 is the most acidic and 14 is the most basic a substance can be.
+
+        Another way to check if a substance is acidic or basic is to use litmus paper. There are two types of litmus paper available that can be used to identify acids and bases - red litmus paper and blue litmus paper. Blue litmus paper turns red under acidic conditions and red litmus paper turns blue under basic or alkaline conditions.
+    </p>
+    <img src="https://static.sciencelearn.org.nz/images/images/000/004/557/original/ART_Acids_and_bases_PH_Scale_v2.png?1617766316" width = 500 length = 600 alt="">
+        
+        
+    
+    <h2>Examples</h2>
+    <p>Take A look at a few examples of Acids amd Bases.
+        <br><br>
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+              <div class="numbertext">1 / 6</div>
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz-hoBVQICo04xiDyyC2BwJSiMZTQxhD-zVg&usqp=CAU" style="width:100%">
+              <div class="text">Lemon - Citric Acid</div>
+            </div>
+            
+            <div class="mySlides fade">
+              <div class="numbertext">2 / 6</div>
+              <img src="https://www.comunicaffe.com/wp-content/uploads/2017/02/milk.jpg" style="width:100%">
+              <div class="text">Milk - Lactic Acid</div>
+            </div>
+            
+            <div class="mySlides fade">
+              <div class="numbertext">3 / 6</div>
+              <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/apples-at-farmers-market-royalty-free-image-1627321463.jpg?crop=1.00xw:0.631xh;0.00160xw,0.206xh&resize=1200:*" style="width:100%">
+              <div class="text">Apple - Malic Acid</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">4 / 6</div>
+                <img src="https://studiousguy.com/wp-content/uploads/2019/04/Magnesium-hydroxide-acids-and-bases-in-everyday-life.jpg" style="width:70%">
+                <div class="text">Digene - Base</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">5 / 6</div>
+                <img src="data:image/jpeg;base64,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" style="width:100%">
+                <div class="text">Baking Soda - Base</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">6 / 6</div>
+                <img src="https://dkstore.online/wp-content/uploads/2016/03/41.jpg" style="width:100%">
+                <div class="text">Soap - Base</div>
+            </div>
+            
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            
+            </div>
+            <br>
+            
+            <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(1)"></span> 
+              <span class="dot" onclick="currentSlide(2)"></span> 
+              <span class="dot" onclick="currentSlide(3)"></span> 
+              <span class="dot" onclick="currentSlide(4)"></span>
+              <span class="dot" onclick="currentSlide(5)"></span>
+              <span class="dot" onclick="currentSlide(6)"></span> 
+            </div>
+            
+            <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+            
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+              var i;
+              var slides = document.getElementsByClassName("mySlides");
+              var dots = document.getElementsByClassName("dot");
+              if (n > slides.length) {slideIndex = 1}    
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                  slides[i].style.display = "none";  
+              }
+              for (i = 0; i < dots.length; i++) {
+                  dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+            }
+            </script>
+</body>
+
+<br><br><br><br><br>
+
+<footer>
+    <table border=1 width ="100%" id=footer>
+        <tr>
+            <td>
+                Thank You For Learning With Us!
+             </td>
+        </tr>
+    </table>
+</footer>
+<html>
